@@ -22,6 +22,9 @@
 
 body {
   font-family: 'MiTipografia', sans-serif;
+  background-image: url(./newimages/textura.png);
+   background-repeat: repeat;
+    background-size: contain;
 }
 
 body {
@@ -123,7 +126,7 @@ position: absolute; /* Se posiciona respecto al más cercano "relative" */
 .contador {
     display: flex;
     color: var(--color-secundario);
-    background-color: var(--color-principal);
+   
     justify-content: center;
     padding: 0px 0 30px 0;
     margin: 0;
@@ -222,7 +225,7 @@ audio::-webkit-media-controls-current-time-display {
     gap: 20px;
     font-size: 1.3rem;
     padding: 40px 0 40px 0 ;
-    background-color: var(--color-principal);
+   
 }
 
 .information-bloque {
@@ -557,13 +560,35 @@ label .grupo-opciones {
 
 /*FYQ*/
 
+.accordion-header {
+    background-color: transparent;   /* nuevo — sin esto, el navegador pone su gris por defecto */
+    border: 1PX SOLID var(--color-terciario);
+    color: var(--color-terciario);
+    font-family: var(--color-secundario);
+    padding: 15px;
+    width: 100%;
+    text-align: left;
+    font-size: 16px;
+    font-weight: normal;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    transition: background-color 0.3s ease;
+}
 
+.accordion-header:hover {
+    background-color: transparent;   /* antes: var(--color-cuartro), que no existía */
+}
+
+.accordion-item.active .accordion-header {
+    background-color: transparent;   /* antes: var(--color-cuartro), mismo typo */
+}
 .accordion {
     position: relative;
     padding: 60PX 0PX 60px 0px;
     width: 100%;
     margin: auto;
-    background-color: var(--color-principal);
+    
   text-align: center;
     font-family: var(--font-secundaria);
     color: var(--color-terciario);
@@ -580,8 +605,9 @@ label .grupo-opciones {
     text-align: center;
 }
 .accordion-item {
-    border: 1px solid #aeaeae;
+    border: 1px solid #5d5b5b;
     margin: 4PX;
+    background-color: transparent;
     text-align: center;
     font-family: var(--font-secundaria);
 }
@@ -589,14 +615,16 @@ label .grupo-opciones {
     margin: auto;
     text-align: center;
 }
-
+.accordion img {
+    width: 50px;
+}
 .accordion-item:last-child {
     border-bottom: none;
 }
 
 .accordion-header {
     border: 1PX SOLID var(--color-terciario);
-    background-color:var(--color-principal);
+    
     color: var(--color-terciario);
     font-family: var(--color-secundario);
     padding: 15px;
@@ -629,7 +657,7 @@ label .grupo-opciones {
 }
 
 .accordion-item.active .accordion-content {
-    max-height: 300px;
+    max-height: 600px;
     padding: 15px;
 }
 
